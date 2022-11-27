@@ -1,4 +1,4 @@
-package com.wsousa.demo.domain;
+package com.wsousa.demo.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

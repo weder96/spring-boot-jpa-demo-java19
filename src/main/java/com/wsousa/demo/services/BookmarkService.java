@@ -1,14 +1,14 @@
 package com.wsousa.demo.services;
 
-import com.wsousa.demo.domain.Bookmark;
-import com.wsousa.demo.domain.PagedResult;
+import com.wsousa.demo.dto.BookmarkDTO;
+import com.wsousa.demo.response.PagedResult;
 
 import java.util.Optional;
 
 public interface BookmarkService {
 
-    public PagedResult<Bookmark> getBookmarks(int pageNo);
-    public Optional<Bookmark> getBookmarkById(Long id);
-    public Bookmark save(Bookmark bookmark);
+    public PagedResult<BookmarkDTO> getBookmarks(int pageNo);
+    public Optional<BookmarkDTO> getBookmarkById(Long id);
+    public BookmarkDTO save(BookmarkDTO bookmarkDTO);
     public void deleteById(Long id);
 }

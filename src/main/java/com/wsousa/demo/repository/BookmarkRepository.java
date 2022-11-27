@@ -1,15 +1,15 @@
 package com.wsousa.demo.repository;
 
-import com.wsousa.demo.domain.Bookmark;
-import com.wsousa.demo.domain.PagedResult;
+import com.wsousa.demo.dto.BookmarkDTO;
+import com.wsousa.demo.response.PagedResult;
 
 import java.util.Optional;
 
 public interface BookmarkRepository {
-    PagedResult<Bookmark> findAll(int pageNo);
-    Optional<Bookmark> findById(Long id);
-    Bookmark save(Bookmark bookmark);
-    Iterable<Bookmark> saveAll(Iterable<Bookmark> bookmarks);
+    PagedResult<BookmarkDTO> findAll(int pageNo);
+    Optional<BookmarkDTO> findById(Long id);
+    BookmarkDTO save(BookmarkDTO bookmarkDTO);
+    Iterable<BookmarkDTO> saveAll(Iterable<BookmarkDTO> bookmarks);
     void deleteById(Long id);
     long count();
 }

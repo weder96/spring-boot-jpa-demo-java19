@@ -1,8 +1,8 @@
 package com.wsousa.demo.repository.impl;
 
 import com.wsousa.demo.config.ApplicationProperties;
-import com.wsousa.demo.domain.Bookmark;
-import com.wsousa.demo.domain.PagedResult;
+import com.wsousa.demo.dto.BookmarkDTO;
+import com.wsousa.demo.response.PagedResult;
 import com.wsousa.demo.entity.BookmarkEntity;
 import com.wsousa.demo.mapper.BookmarkMapper;
 import com.wsousa.demo.repository.BookmarkRepository;
@@ -29,24 +29,24 @@ public class BookmarkRepositoryImpl implements BookmarkRepository {
     }
 
     @Override
-    public PagedResult<Bookmark> findAll(int pageNo) {
+    public PagedResult<BookmarkDTO> findAll(int pageNo) {
         Pageable pageable = getPageable(pageNo);
         return new PagedResult<>(jpaBookmarkRepository.findAllBookmarks(pageable));
     }
 
     @Override
-    public Optional<Bookmark> findById(Long id) {
+    public Optional<BookmarkDTO> findById(Long id) {
         return jpaBookmarkRepository.findBookmarkById(id);
     }
 
     @Override
-    public Bookmark save(Bookmark bookmark) {
-        BookmarkEntity entity = bookmarkMapper.toEntity(bookmark);
+    public BookmarkDTO save(BookmarkDTO bookmarkDTO) {
+        BookmarkEntity entity = bookmarkMapper.toEntity(bookmarkDTO);
         return bookmarkMapper.toModel(jpaBookmarkRepository.save(entity));
     }
 
     @Override
-    public Iterable<Bookmark> saveAll(Iterable<Bookmark> bookmarks) {
+    public Iterable<BookmarkDTO> saveAll(Iterable<BookmarkDTO> bookmarks) {
         List<BookmarkEntity> entities = StreamSupport.stream(bookmarks.spliterator(), false).map(bookmarkMapper::toEntity).toList();
         return jpaBookmarkRepository.saveAll(entities).stream().map(bookmarkMapper::toModel).toList();
     }

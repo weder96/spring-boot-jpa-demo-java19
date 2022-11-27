@@ -1,10 +1,10 @@
-package com.wsousa.demo.domain;
+package com.wsousa.demo.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 
 import java.time.Instant;
 
-public record Bookmark(
+public record BookmarkDTO(
         Long id,
         @NotEmpty(message = "Title is mandatory")
         String title,

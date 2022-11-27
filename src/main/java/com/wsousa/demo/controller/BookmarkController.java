@@ -1,7 +1,7 @@
 package com.wsousa.demo.controller;
 
-import com.wsousa.demo.domain.Bookmark;
-import com.wsousa.demo.domain.PagedResult;
+import com.wsousa.demo.dto.BookmarkDTO;
+import com.wsousa.demo.response.PagedResult;
 import com.wsousa.demo.services.BookmarkService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -21,21 +21,21 @@ public class BookmarkController {
     }
 
     @GetMapping
-    public PagedResult<Bookmark> getBookmarks(@RequestParam(name = "page", defaultValue = "1") Integer page) {
+    public PagedResult<BookmarkDTO> getBookmarks(@RequestParam(name = "page", defaultValue = "1") Integer page) {
         return bookmarkService.getBookmarks(page);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Bookmark> getBookmarkById(@PathVariable Long id) {
+    public ResponseEntity<BookmarkDTO> getBookmarkById(@PathVariable Long id) {
         return bookmarkService.getBookmarkById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public ResponseEntity<Bookmark> save(@Valid @RequestBody Bookmark payload) {
-        Bookmark bookmark = new Bookmark(null, payload.title(), payload.url(), Instant.now());
-        return ResponseEntity.status(HttpStatus.CREATED).body(bookmarkService.save(bookmark));
+    public ResponseEntity<BookmarkDTO> save(@Valid @RequestBody BookmarkDTO payload) {
+        BookmarkDTO bookmarkDTO = new BookmarkDTO(null, payload.title(), payload.url(), Instant.now());
+        return ResponseEntity.status(HttpStatus.CREATED).body(bookmarkService.save(bookmarkDTO));
     }
 
     @DeleteMapping("/{id}")

@@ -101,10 +101,15 @@ Os destaques do novo lançamento incluem:
 
 
 Referências:
+
 https://openjdk.java.net/jeps/395
+
 https://www.baeldung.com/java-record-keyword
+
 https://angiejones.tech/deserializing-api-responses-into-java-records/
+
 https://medium.com/@gaozhixiang/records-vs-lombok-in-java-15-193306340ca0
+
 https://softwaregarden.dev/en/posts/new-java/records/vs-lombok/
 
 

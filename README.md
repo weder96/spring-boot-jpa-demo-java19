@@ -159,6 +159,25 @@ A aplicação se encontra no github [projeto modelo](https://github.com/weder96/
 
 Como rodar o codigo do Github?
 
+Faça o download do Projeto, abra o mesmo na sua IDE preferida.
+
+O projeto está configurado para criar o dados em um banco de dados Postgres, que foi configurado para subir
+usando o docker-compose 
+
+![Code06](https://github.com/weder96/spring-boot-jpa-demo-java19/blob/main/documentation/code06.png)
+
+```
+ docker-compose -f docker-compose.yml up
+```
+
+Com o banco de dados criado:
+```
+mvn spring-boot:run
+```
+
+Na pasta documento a o json com todas as chamadas via postman
+
+![Postman](https://github.com/weder96/spring-boot-jpa-demo-java19/blob/main/documentation/postman.png)
 
 
 Conclusão

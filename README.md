@@ -1,8 +1,12 @@
 # spring-boot-jpa-demo-java19
 
-Spring Boot 3.0, Postgres Java19 Usando Record com PageResult
+Spring Boot 3.0, Postgres Java19 Usando Record com PageResponse
+
+Artigo publicado:
+[https://dev.to/weder96/spring-boot-30-and-postgresql-java19-using-record-with-pageresult-5fj1](https://dev.to/weder96/spring-boot-30-and-postgresql-java19-using-record-with-pageresult-5fj1)
 
 Introdução
+
 Spring é um dos Frameworks baseado em Java mais utilizado no  desenvolvimento de aplicações corporativas.
 
 O Spring Framework fornece um amplo e completo ecossistema de projetos que engloba varios pontos que podem auxiliar a criação de aplicativos, Algum deles São:

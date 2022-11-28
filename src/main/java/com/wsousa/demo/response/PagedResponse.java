@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 
-public record PagedResult<T>(
+public record PagedResponse<T>(
         List<T> data,
         long totalElements,
         int pageNumber,
@@ -20,7 +20,7 @@ public record PagedResult<T>(
         @JsonProperty("hasPrevious")
         boolean hasPrevious
 ) {
-    public PagedResult(Page<T> page) {
+    public PagedResponse(Page<T> page) {
         this(page.getContent(),
                 page.getTotalElements(),
                 page.getNumber() + 1,

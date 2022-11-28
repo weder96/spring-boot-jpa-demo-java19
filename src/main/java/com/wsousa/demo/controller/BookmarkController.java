@@ -1,7 +1,7 @@
 package com.wsousa.demo.controller;
 
 import com.wsousa.demo.dto.BookmarkDTO;
-import com.wsousa.demo.response.PagedResult;
+import com.wsousa.demo.response.PagedResponse;
 import com.wsousa.demo.services.BookmarkService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class BookmarkController {
     }
 
     @GetMapping
-    public PagedResult<BookmarkDTO> getBookmarks(@RequestParam(name = "page", defaultValue = "1") Integer page) {
+    public PagedResponse<BookmarkDTO> getBookmarks(@RequestParam(name = "page", defaultValue = "1") Integer page) {
         return bookmarkService.getBookmarks(page);
     }
 

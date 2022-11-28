@@ -1,8 +1,8 @@
 package com.wsousa.demo.services.impl;
 
 import com.wsousa.demo.dto.BookmarkDTO;
-import com.wsousa.demo.response.PagedResult;
 import com.wsousa.demo.repository.BookmarkRepository;
+import com.wsousa.demo.response.PagedResponse;
 import com.wsousa.demo.services.BookmarkService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class BookmarkServiceImpl implements BookmarkService {
     private final BookmarkRepository bookmarkRepository;
 
-    public PagedResult<BookmarkDTO> getBookmarks(int pageNo) {
+    public PagedResponse<BookmarkDTO> getBookmarks(int pageNo) {
         return bookmarkRepository.findAll(pageNo);
     }
 

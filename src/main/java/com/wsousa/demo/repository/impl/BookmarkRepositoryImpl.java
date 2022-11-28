@@ -2,11 +2,11 @@ package com.wsousa.demo.repository.impl;
 
 import com.wsousa.demo.config.ApplicationProperties;
 import com.wsousa.demo.dto.BookmarkDTO;
-import com.wsousa.demo.response.PagedResult;
 import com.wsousa.demo.entity.BookmarkEntity;
 import com.wsousa.demo.mapper.BookmarkMapper;
 import com.wsousa.demo.repository.BookmarkRepository;
 import com.wsousa.demo.repository.JpaBookmarkRepository;
+import com.wsousa.demo.response.PagedResponse;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -29,9 +29,9 @@ public class BookmarkRepositoryImpl implements BookmarkRepository {
     }
 
     @Override
-    public PagedResult<BookmarkDTO> findAll(int pageNo) {
+    public PagedResponse<BookmarkDTO> findAll(int pageNo) {
         Pageable pageable = getPageable(pageNo);
-        return new PagedResult<>(jpaBookmarkRepository.findAllBookmarks(pageable));
+        return new PagedResponse<>(jpaBookmarkRepository.findAllBookmarks(pageable));
     }
 
     @Override
